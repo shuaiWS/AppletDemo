@@ -1,0 +1,30 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+/*公共样式start*/
+.pullLeft{
+  float: left;
+}
+.pullRight{
+  float: right;
+}
+.clear{
+  clear: both;
+}
+.overHidden{
+  overflow: hidden;
+}
+.textCenter{
+  text-align: center;
+}
+.relative{
+  position: relative;
+}
+/*公共样式end*/

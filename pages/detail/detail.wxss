@@ -1,0 +1,37 @@
+view{
+    box-sizing: border-box;
+}
+/*头部start*/
+.header{
+    border: 1px solid red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 44px;
+    line-height: 44px;
+
+}
+.headerContent{
+    border: 1px solid blue;
+    margin: 0 40px;
+    -webkit-display: flex;
+    display: flex;    
+}
+.headerItem{
+    border: 1px solid red;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;    
+    -webkit-flex-shrink: 1;
+    flex-shrink: 1;    
+}
+.activeHeaderItem{
+    color: red;
+    font-weight: 600;
+}
+/*头部end*/
+.main{
+    border: 1px solid blue;
+    height: 400px;
+    margin-top: 46px;
+}

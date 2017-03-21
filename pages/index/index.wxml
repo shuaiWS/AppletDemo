@@ -1,0 +1,146 @@
+<view>
+<swiper class="swiperContent" indicator-dots='true' autoplay="true" current="0" interval="5000" circular="false">
+  <swiper-item class="swiperItem" wx:for="{{slidImages}}">
+    <image class="swiperImage" src="{{item}}"></image>
+  </swiper-item>
+</swiper>
+</view>
+<!--头部banner start-->
+<view class="topBanner">
+  <image class="topBannerImage" src="https://m.360buyimg.com/mobilecms/jfs/t3853/110/1594293607/53246/841ca218/588880e5N7077ba0b.jpg!q70.jpg"></image>
+</view>
+<!--头部banner end-->
+<!--限时抢购模块start-->
+<view class="limitTimePanel">
+  <view class="limitTimeTitle overHidden">
+    <image class="limitLogo pullLeft" src="https://m.360buyimg.com/mobilecms/jfs/t3451/307/73678054/7807/dd9134d/57fdff2eNb7cd186f.png"></image>
+    <text class="limitBoldText pullLeft">{{limitTimeInfo.title}}</text>
+    <view class="pullLeft timerInfo">
+      <text class="timeNumber textCenter">{{limitTimer.hours}}</text>:<text class="timeNumber textCenter">{{limitTimer.minutes}}</text>:<text class="timeNumber textCenter">{{limitTimer.seconds}}</text>
+    </view>
+    <view class="pullRight guideLimit">{{limitTimeInfo.subtitle}}</view>
+  </view>
+  <scroll-view scroll-x="true" scroll-y="false">
+    <view class="limitGoods">
+      <view class="limitItem textCenter" wx:for="{{limitTimeInfo.goods}}">
+        <navigator url="../detail/detail?{{item.salePrice}}">
+          <image class="limitGoodsImage" src="{{item.goodsImg}}"></image>
+          <view class="limitSalePrice">{{item.salePrice}}</view>
+          <view class="limitOrginalPrice">{{item.goodsPrice}}</view>  
+        </navigator>    
+        </view>
+    </view>
+    
+  </scroll-view>
+</view>
+<!--限时抢购模块end-->
+<view class="guideContent">
+  <view class="guideItem" wx:for="{{guideArray}}">
+      <view>
+        <image class="guideImage"  src="{{item.img}}"></image>
+      </view>
+      <view>{{item.text}}</view>
+  </view>
+</view>
+<!--这里是相关模块的内容start-->
+<view class="activePanel" wx:for="{{activePanel}}" >
+  <view class='panelTitle textCenter'>
+    <image class="panelTitleImage" src="{{item.title}}"></image>
+  </view>
+  <view class="panelArea overHidden">
+    <view class='panelItem pullLeft overHidden' wx:for="{{item.panelArea}}">
+      <view class='itemText pullLeft'>
+        <view class='itemTitle'>{{item.title}}</view>
+        <view>{{item.text}}</view>        
+      </view>
+      <image class='pullLeft itemImage' src="{{item.image}}"></image>
+    </view>
+    <view class='panelActive clear'>
+      <view class='panelActiveItem overHidden' wx:for="{{item.panelActive}}">
+        <view class='panelActiveText'>
+          <view class='boldTitle'>{{item.title}}</view>
+          <view>{{item.text}}</view>
+        </view>
+        <image class='panelActiveImage' src="{{item.image}}"></image>
+      </view>
+    </view>
+    <swiper class='panelActiveBanner'  interval="{{(index+2.5)*1000}}" indicator-dots="true" autoplay="true" circular="true">
+      <swiper-item wx:for="{{item.panelBanner}}">
+        <image class='activeBannerImage' src="{{item}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+</view>
+<!--这里是相关模块的内容end-->
+<!--上下结构的专题模块start-->
+<view class='panelList' wx:for="{{pannelList}}">
+  <view class='panelTitle textCenter relative'>
+    <image class="panelTitleImage" src="{{item.title}}"></image>
+    <navigator url="#" class="moreLink">更多精彩</navigator>
+  </view>
+  <view class="panelContent overHidden">
+    <view class="pullLeft panelListItem overHidden" wx:for="{{item.list}}">
+      <view class="listTitle">{{item.title}} <image wx:if='{{item.isIcon}}' class='listTitleIcon' src="{{item.icon}}"></image></view>
+      <view class='listSubtitle'>{{item.subtitle}}</view>
+      <view class='relative'>
+        <view wx:if="{{item.moreCover}}" class='listCover'> 
+          <image  wx:for="{{item.cover}}" class='listMoreImage' src="{{item}}"></image>
+        </view>
+        <view wx:else class='listCover'> 
+          <image  wx:for="{{item.cover}}" class='listImage' src="{{item}}"></image>
+        </view>
+        <view class='listIconFooter' wx:if="{{item.isFooterIcon}}">
+          <view class='footerText'><image class='footerIcon' src="{{item.footerIcon}}"></image>{{item.text}}</view>
+        </view>
+        <view class='footerAllText textCenter' wx:if='{{item.isText}}'>{{item.text}}</view>
+      </view>
+
+    </view>
+  </view>
+</view>
+<!--上下结构的专题模块end-->
+<!--广告专栏start-->
+<view class='bannerContent'>
+    <view class='bannerList overHidden'>
+      <view class='pullLeft bannerListItem'>
+       <navigator url="#">
+         <image class='leftBanner' src="https://m.360buyimg.com/mobilecms/jfs/t3817/297/3257043461/30280/eb038d36/5880aaeaN0be53421.jpg!q70.jpg"></image>
+        </navigator>
+      </view>
+      <view class='pullLeft bannerListItem'>
+       <navigator url="#">
+         <image class='rightBanner' src="https://m.360buyimg.com/mobilecms/jfs/t3238/269/5785289774/36480/805da1b3/5880b112Na30fc288.jpg!q70.jpg"></image>
+        </navigator>
+         <navigator url="#">
+         <image class='rightBanner' src="https://m.360buyimg.com/mobilecms/jfs/t3238/6/5770521500/27028/129384af/588168f7N6a445b97.png!q70.jpg"></image>
+        </navigator>
+      </view>
+      
+    </view>
+    <navigator url="#">
+      <image class='bannerFooter' src="https://m.360buyimg.com/mobilecms/jfs/t3118/230/5179921910/141548/9c799981/5865ba03N3e4ab06f.jpg!q70.jpg"></image>
+    </navigator>
+</view>
+<!--广告专栏end-->
+<!--为您推荐start-->
+<view class='recommendPanel'>
+  <view class='recommendTitle textCenter'>
+      为您推荐
+  </view>
+  <view class='recommendMain'>
+      <view class='recommendItem' wx:for="{{recommendList}}">
+      <navigator class='goodsUrl'  url="{{item.goodsUrl}}">
+        <image class='goodsImage' src="{{item.goodsImage}}"></image>
+        <view class='goodsName overHidden'>
+          {{item.goodsName}}
+        </view>
+        <view class='overHidden recommendItemFooter'>
+          <text class='goodsPrice'>{{item.goodsPrice}}</text>
+          <navigator url="{{item.sameUrl}}" class='lookSame pullRight'>看相似</navigator>
+        </view>
+        </navigator>
+      </view>
+  </view>
+</view>
+<!--为您推荐end-->

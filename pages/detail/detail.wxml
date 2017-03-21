@@ -1,0 +1,10 @@
+<view class='header '>
+    <view class='headerContent'>
+        <view catchtap='changeHeaderItem' data-item='1' class='headerItem textCenter {{selectHeaderItem==1?"activeHeaderItem":""}}'>商品</view>
+        <view catchtap='changeHeaderItem' data-item='2' class='headerItem textCenter {{selectHeaderItem==2?"activeHeaderItem":""}}'>详情</view>
+        <view catchtap='changeHeaderItem' data-item='3' class='headerItem textCenter {{selectHeaderItem==3?"activeHeaderItem":""}}'>评价</view>
+    </view>    
+</view>
+<view class='main textCenter'>
+    程序员正在吐血开发中、、、
+</view>
